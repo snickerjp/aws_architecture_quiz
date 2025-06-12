@@ -1,0 +1,13 @@
+{
+    "strands": {
+      "command": "uvx",
+      "args": [
+        "strands-agents-mcp-server"
+      ],
+      "autoApprove": [
+        "quickstart",
+        "model_providers",
+        "agent_tools"
+      ]
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Python 3.12 with UV and Amazon Q",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {},
+  "extensions": [
+    "ms-python.python"
+  ],
+  "postCreateCommand": "",
+  "remoteUser": "vscode"
+}
