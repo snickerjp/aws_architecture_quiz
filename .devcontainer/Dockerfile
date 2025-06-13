@@ -10,6 +10,11 @@ RUN apt-get update && apt-get install -y \
     && wget -qO /tmp/amazon-q.deb https://desktop-release.q.us-east-1.amazonaws.com/latest/amazon-q.deb \
     && apt-get install -y /tmp/amazon-q.deb \
     && rm /tmp/amazon-q.deb \
+    # Install AWS CLI
+    && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && ./aws/install \
+    && rm -rf awscliv2.zip aws \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up a non-root user for VS Code
@@ -30,6 +35,7 @@ USER $USERNAME
 # 必要なディレクトリを作成し、ファイルをコピー
 RUN mkdir -p ~/.aws/amazonq
 COPY mcp.json ~/.aws/amazonq/mcp.json
+RUN ls -l ~/.aws/amazonq/
 
 # Install Python tools
 RUN python3 -m pip install --upgrade pip \
